@@ -51,6 +51,32 @@ function formatWeekdayTime() {
 let currentWeekdayTime = document.querySelector("#weekday-time");
 currentWeekdayTime.innerHTML = formatWeekdayTime();
 
+//Display last updated time 
+
+
+function formatTimestamp(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+
 //Display city name on the page after the user submits the search form.
 
 function showCitySearch(event) {
@@ -80,7 +106,7 @@ function showWeather(response) {
   document.querySelector(".humidity").innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )} %`;
-}
+  document.querySelector("#timestamp-api").innerHTML = formatTimestamp(response.data.dt * 1000);
 
 function searchEvent(event) {
   event.preventDefault();
