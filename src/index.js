@@ -80,7 +80,10 @@ function showWeather(response) {
   document.querySelector(".humidity").innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )} %`;
-  document.querySelector("#timestamp-api").innerHTML = formatTimestamp(response.data.dt * 1000);
+  document.querySelector("small").innerHTML = `Last updated: ${
+    response.data.dt * 1000
+  }`;
+}
 
 function searchEvent(event) {
   event.preventDefault();
