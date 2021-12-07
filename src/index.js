@@ -82,11 +82,13 @@ function showWeather(response) {
   )} %`;
   var timestamp = response.data.dt;
   (date = new Date(timestamp * 1000)),
-    (datevalues = [date.getHours(), date.getMinutes()]);
-  alert(datevalues);
-  document.querySelector("small").innerHTML = `Last updated: ${
-    response.data.dt * 1000
-  }`;
+    (formattedTimestamp = date.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    }));
+  document.querySelector(
+    "small"
+  ).innerHTML = `Last updated: ${formattedTimestamp}`;
   document
     .querySelector("#main-icon")
     .setAttribute(
