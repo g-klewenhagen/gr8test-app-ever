@@ -80,6 +80,10 @@ function showWeather(response) {
   document.querySelector(".humidity").innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )} %`;
+  var timestamp = response.data.dt;
+  (date = new Date(timestamp * 1000)),
+    (datevalues = [date.getHours(), date.getMinutes()]);
+  alert(datevalues);
   document.querySelector("small").innerHTML = `Last updated: ${
     response.data.dt * 1000
   }`;
@@ -89,9 +93,9 @@ function showWeather(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  console.log(
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  document
+    .querySelector("#main-icon")
+    .setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
 function searchEvent(event) {
