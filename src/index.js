@@ -177,6 +177,7 @@ function retrievePosition(position) {
   axios.get(apiUrl).then(displayCurrentLocationMinMaxTemp);
   axios.get(apiUrl).then(displayCurrentLocationWind);
   axios.get(apiUrl).then(displayCurrentLocationHumidity);
+  axios.get(apiUrl).then(displayCurrentLocationIcon);
 }
 navigator.geolocation.getCurrentPosition(retrievePosition);
 
