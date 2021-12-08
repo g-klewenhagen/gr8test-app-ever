@@ -62,6 +62,15 @@ function showCitySearch(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showCitySearch);
 
+//Simplify function for weather display
+let dateElement = document.querySelector("#current-date-header");
+let cityNameElement = document.querySelector("h1");
+let timestampElement = document.querySelector("small");
+let temperatureElement = document.querySelector("#temp-description");
+let minMaxElement = document.querySelector("#min-max-temp");
+let humidityElement = document.querySelector(".humidity");
+let windspeedElement = document.querySelector(".windspeed");
+
 //Display weather of searched city
 function showWeather(response) {
   console.log(response);
@@ -86,9 +95,15 @@ function showWeather(response) {
       hour: "2-digit",
       minute: "2-digit",
     }));
+  formattedDateTimestamp = date.toLocaleDateString([], {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
   document.querySelector(
     "small"
-  ).innerHTML = `Last updated: ${formattedTimestamp}`;
+  ).innerHTML = `Last updated: ${formattedDateTimestamp} / ${formattedTimestamp}`;
   document
     .querySelector("#main-icon")
     .setAttribute(
@@ -192,8 +207,12 @@ locate.addEventListener("click", changeToCurrentLocationInfo);
 //Change between F and C
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  alert("link clicked");
+  let fahrenheitTemperature = (14 * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#numerical-temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
+let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
