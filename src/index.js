@@ -1,7 +1,6 @@
 //Display current date
-
-let now = new Date();
 function formatDate(Date) {
+  let now = new Date();
   let months = [
     "January",
     "February",
@@ -29,7 +28,9 @@ currentDateHeader.innerHTML = formatDate();
 
 //Display current time
 
-function formatWeekdayTime() {
+function formatWeekdayTime(timestamp) {
+  var timestamp = response.data.dt;
+  (date = new Date(timestamp * 1000)),
   let days = [
     "Sunday",
     "Monday",
@@ -39,13 +40,17 @@ function formatWeekdayTime() {
     "Friday",
     "Saturday",
   ];
-  let day = days[now.getDay()];
-  let formattedTime = now.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-  let formattedWeekdayTime = `${day}, ${formattedTime}`;
-  return formattedWeekdayTime;
+  let day = days[date.getDay()];
+    (formattedTimestamp = date.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    }));
+  document.querySelector(
+    "small"
+  ).innerHTML = `Last updated: ${formattedTimestamp}`;
+  
+  let formattedWeekdayTime = `${day}, ${formattedTimestamp}`;
+  console.log(formattedWeekdayTime);
 }
 
 let currentWeekdayTime = document.querySelector("#weekday-time");
@@ -80,15 +85,6 @@ function showWeather(response) {
   document.querySelector(".humidity").innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )} %`;
-  var timestamp = response.data.dt;
-  (date = new Date(timestamp * 1000)),
-    (formattedTimestamp = date.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    }));
-  document.querySelector(
-    "small"
-  ).innerHTML = `Last updated: ${formattedTimestamp}`;
   document
     .querySelector("#main-icon")
     .setAttribute(
