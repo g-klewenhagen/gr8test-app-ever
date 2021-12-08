@@ -120,7 +120,7 @@ function showCityName(response) {
 function displayCurrentLocationTemp(response) {
   let newMainCityTemp = response.data.main.temp;
   let newMainCityTempDisplayed = document.querySelector("#numerical-temp");
-  newMainCityTempDisplayed.innerHTML = `${Math.round(newMainCityTemp)} °`;
+  newMainCityTempDisplayed.innerHTML = `${Math.round(newMainCityTemp)}`;
 }
 function displayCurrentLocationWeatherDescription(response) {
   let currentLocationDescription = response.data.weather[0].main;
