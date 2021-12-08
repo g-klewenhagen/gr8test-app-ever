@@ -188,3 +188,12 @@ function changeToCurrentLocationInfo(event) {
 
 let locate = document.querySelector("#current-location-button");
 locate.addEventListener("click", changeToCurrentLocationInfo);
+
+//Change between F and C
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  alert("link clicked");
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
