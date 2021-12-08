@@ -155,11 +155,13 @@ function displayCurrentLocationIcon(response) {
   let currentLocationIcon = response.data.weather[0].icon;
   document
     .querySelector("#main-icon")
-    .setAttribute("src", `${currentLocationIcon}`);
-  currentLocationIconDisplayed.setAttribute(
-    "alt",
-    `${response.data.weather[0].description}`
-  );
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${currenttLocationIcon}@2x.png`
+    );
+  document
+    .querySelector("#main-icon")
+    .setAttribute("alt", `${response.data.weather[0].description}`);
 }
 function retrievePosition(position) {
   let latitude = position.coords.latitude;
