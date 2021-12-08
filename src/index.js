@@ -157,7 +157,7 @@ function displayCurrentLocationIcon(response) {
     .querySelector("#main-icon")
     .setAttribute(
       "src",
-      `http://openweathermap.org/img/wn/${currenttLocationIcon}@2x.png`
+      `http://openweathermap.org/img/wn/${currentLocationIcon}@2x.png`
     );
   document
     .querySelector("#main-icon")
