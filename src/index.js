@@ -156,7 +156,7 @@ function displayCurrentLocationIcon(response) {
   let currentLocationIconDisplayed = document.queryselector("#main-icon");
   currentLocationIconDisplayed.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${CurrentLocationIcon}@2x.png`
+    `http://openweathermap.org/img/wn/${currentLocationIcon}@2x.png`
   );
   currentLocationIconDisplayed.setAttribute(
     "alt",
