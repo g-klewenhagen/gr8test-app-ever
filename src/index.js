@@ -153,11 +153,9 @@ function displayCurrentLocationHumidity(response) {
 }
 function displayCurrentLocationIcon(response) {
   let currentLocationIcon = response.data.weather[0].icon;
-  let currentLocationIconDisplayed = document.queryselector("#main-icon");
-  currentLocationIconDisplayed.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${currentLocationIcon}@2x.png`
-  );
+  document
+    .querySelector("#main-icon")
+    .setAttribute("src", `${currentLocationIcon}`);
   currentLocationIconDisplayed.setAttribute(
     "alt",
     `${response.data.weather[0].description}`
