@@ -70,7 +70,7 @@ function showWeather(response) {
     response.data.weather[0].main;
   document.querySelector("#numerical-temp").innerHTML = `${Math.round(
     response.data.main.temp
-  )}°`;
+  )}`;
   document.querySelector("#min-max-temp").innerHTML = `Min:${Math.round(
     response.data.main.temp_max
   )} Max:${Math.round(response.data.main.temp_min)}`;
@@ -150,6 +150,18 @@ function displayCurrentLocationHumidity(response) {
   let currentLocationHumidity = response.data.main.humidity;
   let currentLocationHumidityDisplayed = document.querySelector(".humidity");
   currentLocationHumidityDisplayed.innerHTML = `Humidity: ${currentLocationHumidity}%`;
+}
+function displayCurrentLocationIcon(response) {
+  let currentLocationIcon = response.data.weather[0].icon;
+  let currentLocationIconDisplayed = document.queryselector("#main-icon");
+  currentLocationIconDisplayed.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  currentLocationIconDisplayed.setAttribute(
+    "alt",
+    `${response.data.weather[0].description}`
+  );
 }
 function retrievePosition(position) {
   let latitude = position.coords.latitude;
