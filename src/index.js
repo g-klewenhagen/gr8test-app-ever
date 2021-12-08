@@ -1,7 +1,7 @@
 //Display current date
 
+let now = new Date();
 function formatDate(Date) {
-  let now = new Date();
   let months = [
     "January",
     "February",
