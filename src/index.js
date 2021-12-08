@@ -72,8 +72,8 @@ function showWeather(response) {
     response.data.main.temp
   )}`;
   document.querySelector("#min-max-temp").innerHTML = `Min:${Math.round(
-    response.data.main.temp_max
-  )} Max:${Math.round(response.data.main.temp_min)}`;
+    response.data.main.temp_min
+  )} Max:${Math.round(response.data.main.temp_max)}`;
   document.querySelector(".windspeed").innerHTML = `Wind speed: ${Math.round(
     response.data.wind.speed
   )} km/h`;
