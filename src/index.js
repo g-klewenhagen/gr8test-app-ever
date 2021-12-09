@@ -77,58 +77,8 @@ function searchEvent(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchEvent);
 
-//display defaultcity based in geolocation
+//function to retrieve position
 
-function showCityName(response) {
-  console.log(response.data.name);
-}
-
-function displayCurrentLocationTemp(response) {
-  let newMainCityTemp = response.data.main.temp;
-  let newMainCityTempDisplayed = document.querySelector("#numerical-temp");
-  newMainCityTempDisplayed.innerHTML = `${Math.round(newMainCityTemp)}`;
-}
-function displayCurrentLocationWeatherDescription(response) {
-  let currentLocationDescription = response.data.weather[0].main;
-  let currentLocationDescriptionDisplayed =
-    document.querySelector("#temp-description");
-  currentLocationDescriptionDisplayed.innerHTML = `${currentLocationDescription}`;
-}
-function displayCurrentLocationMinMaxTemp(response) {
-  let maxTemp = Math.round(response.data.main.temp_max);
-  let minTemp = Math.round(response.data.main.temp_min);
-  let newMinMaxTempDisplayed = document.querySelector("#min-max-temp-main");
-  newMinMaxTempDisplayed.innerHTML = `Min:${minTemp} Max:${maxTemp}`;
-}
-function displayCurrentLocationName(response) {
-  let currentLocationName = response.data.name;
-  let currentLocationNameDisplayed = document.querySelector("h1");
-  currentLocationNameDisplayed.innerHTML = `${currentLocationName}`;
-}
-function displayCurrentLocationWind(response) {
-  let currentLocationWind = response.data.wind.speed;
-  let currentLocationWindDisplayed = document.querySelector(".windspeed");
-  currentLocationWindDisplayed.innerHTML = `Wind speed: ${Math.round(
-    currentLocationWind
-  )}km/h`;
-}
-function displayCurrentLocationHumidity(response) {
-  let currentLocationHumidity = response.data.main.humidity;
-  let currentLocationHumidityDisplayed = document.querySelector(".humidity");
-  currentLocationHumidityDisplayed.innerHTML = `Humidity: ${currentLocationHumidity}%`;
-}
-function displayCurrentLocationIcon(response) {
-  let currentLocationIcon = response.data.weather[0].icon;
-  document
-    .querySelector("#main-icon")
-    .setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${currentLocationIcon}@2x.png`
-    );
-  document
-    .querySelector("#main-icon")
-    .setAttribute("alt", `${response.data.weather[0].description}`);
-}
 function retrievePosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -137,13 +87,7 @@ function retrievePosition(position) {
   let units = "metric";
   let apiUrl = `${apiEndpoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
 
-  axios.get(apiUrl).then(displayCurrentLocationName);
-  axios.get(apiUrl).then(displayCurrentLocationTemp);
-  axios.get(apiUrl).then(displayCurrentLocationWeatherDescription);
-  axios.get(apiUrl).then(displayCurrentLocationMinMaxTemp);
-  axios.get(apiUrl).then(displayCurrentLocationWind);
-  axios.get(apiUrl).then(displayCurrentLocationHumidity);
-  axios.get(apiUrl).then(displayCurrentLocationIcon);
+  axios.get(apiUrl).then(showWeather);
 }
 navigator.geolocation.getCurrentPosition(retrievePosition);
 
