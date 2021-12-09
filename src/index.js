@@ -112,6 +112,8 @@ function displayFahrenheitTemperature(event) {
     minTempFahrenheit
   )} Max:${Math.round(maxTempFahrenheit)}`;
   windspeedElement.innerHTML = `${Math.round(windspeedImperial)} mph`;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 
 function displayCelsiusTemperature(event) {
@@ -124,6 +126,8 @@ function displayCelsiusTemperature(event) {
     minTempCelsius
   )} Max:${Math.round(maxTempCelsius)}`;
   windspeedElement.innerHTML = `${Math.round(windspeed)} km/h`;
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 let celsiusTemperature = null;
