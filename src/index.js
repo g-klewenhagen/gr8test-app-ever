@@ -1,56 +1,29 @@
-//Display current date
-
-let now = new Date();
-function formatDate(Date) {
-  let months = [
-    "January",
-    "February",
-    "'March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  let year = now.getFullYear();
-  let month = months[now.getMonth()];
-  let date = now.getDate();
-  let formattedDate = `${month} ${date}, ${year}`;
-
-  return formattedDate;
-}
-
-let currentDateHeader = document.querySelector("#current-date-header");
-currentDateHeader.innerHTML = formatDate();
-
 //Display current time
-
-function formatWeekdayTime() {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[now.getDay()];
-  let formattedTime = now.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-  let formattedWeekdayTime = `${day}, ${formattedTime}`;
-  return formattedWeekdayTime;
+function formatTime(timestamp) {
+  let date = new Date(timestamp),
+    formattedTimestamp = date.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
+    formattedDateTimestamp = date.toLocaleDateString([], {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  return formattedTimestamp;
 }
-
-let currentWeekdayTime = document.querySelector("#weekday-time");
-currentWeekdayTime.innerHTML = formatWeekdayTime();
-
+//Display current date
+function formatDate(timestamp) {
+  let date = new Date(timestamp),
+    formattedDateTimestamp = date.toLocaleDateString([], {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  return formattedDateTimestamp;
+}
 //Display city name on the page after the user submits the search form.
 
 function showCitySearch(event) {
@@ -63,56 +36,43 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", showCitySearch);
 
 //Simplify function for weather display
-let dateElement = document.querySelector("#current-date-header");
-let cityNameElement = document.querySelector("h1");
-let timestampElement = document.querySelector("small");
-let temperatureElement = document.querySelector("#temp-description");
-let minMaxElement = document.querySelector("#min-max-temp");
-let humidityElement = document.querySelector(".humidity");
-let windspeedElement = document.querySelector(".windspeed");
 
 //Display weather of searched city
 function showWeather(response) {
   console.log(response);
-  document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector("#temp-description").innerHTML =
-    response.data.weather[0].main;
-  document.querySelector("#numerical-temp").innerHTML = `${Math.round(
-    response.data.main.temp
-  )}`;
-  document.querySelector("#min-max-temp").innerHTML = `Min:${Math.round(
-    response.data.main.temp_min
-  )} Max:${Math.round(response.data.main.temp_max)}`;
-  document.querySelector(".windspeed").innerHTML = `Wind speed: ${Math.round(
-    response.data.wind.speed
-  )} km/h`;
-  document.querySelector(".humidity").innerHTML = `Humidity: ${Math.round(
+  let dateElement = document.querySelector("#current-date-header");
+  let cityNameElement = document.querySelector("h1");
+  let timestampElement = document.querySelector("small");
+  let temperatureElement = document.querySelector("#numerical-temp");
+  let descriptionElement = document.querySelector("#temp-description");
+  let minMaxElement = document.querySelector("#min-max-temp");
+  let humidityElement = document.querySelector(".humidity");
+  let windspeedElement = document.querySelector(".windspeed");
+  let iconElement = document.querySelector("#main-icon");
+
+  celsiusTemperature = response.data.main.temp;
+  let maxTemp = Math.round(response.data.main.temp_max);
+  let minTemp = Math.round(response.data.main.temp_min);
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  cityNameElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  minMaxElement = `Min: ${minTemp} Max:${maxTemp}`;
+  humidityElement.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )} %`;
-  var timestamp = response.data.dt;
-  (date = new Date(timestamp * 1000)),
-    (formattedTimestamp = date.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    }));
-  formattedDateTimestamp = date.toLocaleDateString([], {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-  document.querySelector(
-    "small"
-  ).innerHTML = `Last updated: ${formattedDateTimestamp} / ${formattedTimestamp}`;
-  document
-    .querySelector("#main-icon")
-    .setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  document
-    .querySelector("#main-icon")
-    .setAttribute("alt", `${response.data.weather[0].description}`);
+  windspeedElement.innerHTML = `Wind speed: ${Math.round(
+    response.data.wind.speed
+  )} km/h`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  timestampElement.innerHTML = `Last updated: ${formatTime(
+    response.data.dt * 1000
+  )}`;
 }
 
 function searchEvent(event) {
