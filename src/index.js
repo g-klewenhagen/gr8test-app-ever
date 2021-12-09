@@ -89,8 +89,6 @@ function retrievePosition(position) {
 
   axios.get(apiUrl).then(showWeather);
 }
-navigator.geolocation.getCurrentPosition(retrievePosition);
-
 function changeToCurrentLocationInfo(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(retrievePosition);
@@ -138,3 +136,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+navigator.geolocation.getCurrentPosition(retrievePosition);
