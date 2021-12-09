@@ -172,6 +172,18 @@ function displayFahrenheitTemperature(event) {
   windspeedElement.innerHTML = `${Math.round(windspeedImperial)} mph`;
 }
 
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#numerical-temp");
+  let minMaxElement = document.querySelector("#min-max-temp-main");
+  let windspeedElement = document.querySelector(".windspeed");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  minMaxElement.innerHTML = `Min: ${Math.round(
+    minTempCelsius
+  )} Max:${Math.round(maxTempCelsius)}`;
+  windspeedElement.innerHTML = `${Math.round(windspeed)} km/h`;
+}
+
 let celsiusTemperature = null;
 let minTempCelsius = null;
 let maxTempCelsius = null;
@@ -179,3 +191,6 @@ let windspeed = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
