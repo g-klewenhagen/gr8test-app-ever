@@ -24,18 +24,6 @@ function formatDate(timestamp) {
     });
   return formattedDateTimestamp;
 }
-//Display city name on the page after the user submits the search form.
-
-function showCitySearch(event) {
-  event.preventDefault();
-  let input = document.querySelector("#search-city");
-  let cityTitle = document.querySelector("h1");
-  cityTitle.innerHTML = `${input.value}`;
-}
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", showCitySearch);
-
-//Simplify function for weather display
 
 //Display weather of searched city
 function showWeather(response) {
@@ -45,19 +33,22 @@ function showWeather(response) {
   let timestampElement = document.querySelector("small");
   let temperatureElement = document.querySelector("#numerical-temp");
   let descriptionElement = document.querySelector("#temp-description");
-  let minMaxElement = document.querySelector("#min-max-temp");
+  let minMaxElement = document.querySelector("#min-max-temp-main");
   let humidityElement = document.querySelector(".humidity");
   let windspeedElement = document.querySelector(".windspeed");
   let iconElement = document.querySelector("#main-icon");
 
   celsiusTemperature = response.data.main.temp;
-  let maxTemp = Math.round(response.data.main.temp_max);
-  let minTemp = Math.round(response.data.main.temp_min);
+  maxTempCelsius = response.data.main.temp_max;
+  minTempCelsius = response.data.main.temp_min;
+  windspeed = response.data.wind.speed;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityNameElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  minMaxElement = `Min: ${minTemp} Max:${maxTemp}`;
+  minMaxElement.innerHTML = `Min: ${Math.round(
+    minTempCelsius
+  )} Max:${Math.round(maxTempCelsius)}`;
   humidityElement.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )} %`;
@@ -106,7 +97,7 @@ function displayCurrentLocationWeatherDescription(response) {
 function displayCurrentLocationMinMaxTemp(response) {
   let maxTemp = Math.round(response.data.main.temp_max);
   let minTemp = Math.round(response.data.main.temp_min);
-  let newMinMaxTempDisplayed = document.querySelector("#min-max-temp");
+  let newMinMaxTempDisplayed = document.querySelector("#min-max-temp-main");
   newMinMaxTempDisplayed.innerHTML = `Min:${minTemp} Max:${maxTemp}`;
 }
 function displayCurrentLocationName(response) {
@@ -167,12 +158,24 @@ locate.addEventListener("click", changeToCurrentLocationInfo);
 //Change between F and C
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (14 * 9) / 5 + 32;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let minTempFahrenheit = (minTempCelsius * 9) / 5 + 32;
+  let maxTempFahrenheit = (maxTempCelsius * 9) / 5 + 32;
+  let windspeedImperial = windspeed / 1.609;
   let temperatureElement = document.querySelector("#numerical-temp");
+  let minMaxElement = document.querySelector("#min-max-temp-main");
+  let windspeedElement = document.querySelector(".windspeed");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  minMaxElement.innerHTML = `Min: ${Math.round(
+    minTempFahrenheit
+  )} Max:${Math.round(maxTempFahrenheit)}`;
+  windspeedElement.innerHTML = `${Math.round(windspeedImperial)} mph`;
 }
 
 let celsiusTemperature = null;
+let minTempCelsius = null;
+let maxTempCelsius = null;
+let windspeed = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
