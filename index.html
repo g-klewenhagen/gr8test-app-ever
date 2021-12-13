@@ -53,8 +53,18 @@
       <!-- Page Content  -->
       <div class="container">
         <div id="content" class="p-4 p-md-5 pt-5">
-          <!-- Search bar  -->
+          <!-- Search bar -->
+        <div class="wrapper" id="search-section">
           <form class="weather-search-form" id="search-form">
+            <button
+              type="submit"
+              class="btn btn-link current-location-button"
+              id="current-location-button"
+              data-toggle="tooltip" 
+              title="Get current location's weather"
+            >
+              <i class="fas fa-map-marker-alt"></i> Current location
+            </button>
             <input
               type="search"
               class="search-box"
@@ -68,25 +78,19 @@
               type="submit"
               class="btn btn-link"
               id="search-location-button"
+              data-toggle="tooltip" 
+              title="Search new location's weather"
             >
-              <i class="fas fa-search-location"></i>
-            </button>
-            <button
-              type="submit"
-              class="btn btn-link current-location-button"
-              id="current-location-button"
-            >
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-search-location"></i>Search
             </button>
           </form>
+        </div>
           <!-- Alternative display  -->
           <div class="container">
             <div class="row 1">
               <div class="col city-header" id="city-main">
-                <h1>Stuttgart</h1>
-                <h3 id="current-date-header">Month XX, Year</h3>
-              </div>
-              <div class="col date-details">
+                <h1>Loading...</h1>
+                <h3 id="current-date-header">December, 2021</h3>
                 <small id="timestamp-api">Last Updated: XX:XX</small>
               </div>
             </div>
@@ -155,6 +159,11 @@
       </div>
     </div>
     <footer><a href="https://github.com/g-klewenhagen/gr8test-app-ever" target="blank">Open-source coded</a> by Gabriela Klewenhagen</footer>
-    <script src="src/index.js"></script>
+    <script 
+    src="src/index.js">
+    $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
   </body>
 </html>
