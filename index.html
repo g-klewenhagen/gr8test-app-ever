@@ -87,40 +87,33 @@
         </div>
           <!-- Alternative display  -->
           <div class="container">
-            <div class="row 1">
               <div class="col city-header" id="city-main">
                 <h1>Loading...</h1>
                 <h3 id="current-date-header">December, 2021</h3>
-                <small id="timestamp-api">Last Updated: XX:XX</small>
+                <h5 id="timestamp-api">Last Updated: XX:XX</h5>
               </div>
-            </div>
             <div class="row 1">
-              <div class="col blank"></div>
-              <div class="col weather-icon-main" ><img id="main-icon"src="http://openweathermap.org/img/wn/10d@2x.png" alt=""></div>
-              <div class="col current-temp" id="numerical-temp">1°</div>
-              <div class="col temp-units">
-                <div class="units-temperature">
+             <div class="col icon-temp-units" id="icon-temp-main">
+              <span class="weather-icon-main" ><img id="main-icon"src="http://openweathermap.org/img/wn/10d@2x.png" alt=""></span>
+              <span class="col current-temp" id="numerical-temp">1°</span>
+                <span class="units-temperature">
                   <a href="#" class="active" id="celsius-link">°C</a>
                   <span> | </span>
                   <a href="#" id="fahrenheit-link">°F</a>
-                </div>
-                <div class="col weather-details" id="additionaldetails">
-                  <div class="humidity">Humidity: 86%</div>
-                  <div class="windspeed">Wind Speed: 3 km/h</div>
-                </div>
+                </span>
               </div>
-              <div class="col blank"></div>
             </div>
             <div class="row 2">
-              <div class="col blank"></div>
-              <div class="col current-temp-description" id="temp-description">
+              <h2 class="col current-temp-description" id="temp-description">
                 Snow
-              </div>
+              </h2>
+            </div>
+            <div class="row 3">
               <div class="col min-max-temp-main" id="min-max-temp-main">
                 Min: Max:
               </div>
-              <div class="col blank"></div>
-              <div class="col blank"></div>
+              <div class="col humidity">Humidity: 86%</div>
+              <div class="col windspeed">Wind Speed: 3 km/h</div>
             </div>
           </div>
             <!-- Forecast  -->
@@ -132,27 +125,7 @@
                 </div>
                 <br />
               </div>
-              <div class="row weekdays">
-                <div class="col" id="day-today+1">Mon</div>
-                <div class="col" id="day-today+2">Tue</div>
-                <div class="col" id="day-today+3">Wed</div>
-                <div class="col" id="day-today+4">Thu</div>
-                <div class="col" id="day-today+5">Fri</div>
-              </div>
-              <div class="row weather-emoji-forecast">
-                <div class="col" id="emoji-today+1">⛅</div>
-                <div class="col" id="emoji-today+2">🌧️</div>
-                <div class="col" id="emoji-today+3">⛈️</div>
-                <div class="col" id="emoji-today+4">🌧️</div>
-                <div class="col" id="emoji-today+5">☀️</div>
-              </div>
-              <div class="row forecast-temperature">
-                <div class="col" id="temp-today+1">8</div>
-                <div class="col" id="temp-today+2">10</div>
-                <div class="col" id="temp-today+3">11</div>
-                <div class="col" id="temp-today+4">14</div>
-                <div class="col" id="temp-today+5">7</div>
-              </div>
+              <div id="forecast-info"></div>
             </div>
           </div>
         </div>
