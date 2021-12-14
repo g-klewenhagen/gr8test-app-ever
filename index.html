@@ -104,15 +104,17 @@
               </div>
             </div>
             <div class="row 2">
-              <h2 class="col current-temp-description" id="temp-description">
+              <h4 class="col current-temp-description" id="temp-description">
                 Snow
-              </h2>
+              </h4>
             </div>
-            <div class="row 3">
+            <div class="row additional-info">
               <div class="col min-max-temp-main" id="min-max-temp-main">
                 Min: Max:
               </div>
+              <div class="col-1">|</div>
               <div class="col humidity">Humidity: 86%</div>
+              <div class="col-1">|</div>
               <div class="col windspeed">Wind Speed: 3 km/h</div>
             </div>
           </div>
@@ -120,12 +122,25 @@
             <div class="container">
               <div class="row">
                 <div class="col-12 predicted-weather-text">
-                  <h3>Five-days weather forecast:</h3>
+                  <h2>Five-days weather forecast:</h2>
                   <br />
                 </div>
                 <br />
               </div>
-              <div id="forecast-info"></div>
+              <div id="forecast-info">
+                <div class="col-2">
+                <div class="weather-forecast-date">MON</div>
+                  <img
+                  src="http://openweathermap.org/img/wn/10n@2x.png"
+                  alt=""
+                  width="42"
+                  />
+                <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-max"> 35° </span>
+                  <span class="weather-forecast-temperature-min"> -7° </span>
+                </div>
+              </div>
+              </div>
             </div>
           </div>
         </div>
