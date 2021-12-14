@@ -4,12 +4,6 @@ function formatTime(timestamp) {
     formattedTimestamp = date.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
-    }),
-    formattedDateTimestamp = date.toLocaleDateString([], {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
     });
   return formattedTimestamp;
 }
@@ -99,7 +93,7 @@ function showWeather(response) {
   windspeed = response.data.wind.speed;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  cityNameElement.innerHTML = response.data.name;
+  cityNameElement.innerHTML = `${response.data.name}, ${response.data.sys.country} `;
   descriptionElement.innerHTML = response.data.weather[0].description;
   minMaxElement.innerHTML = `Min: ${Math.round(
     minTempCelsius
