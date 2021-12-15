@@ -82,10 +82,13 @@ function showWeather(response) {
   let timestampElement = document.querySelector("h5");
   let temperatureElement = document.querySelector("#numerical-temp");
   let descriptionElement = document.querySelector("#temp-description");
-  let minMaxElement = document.querySelector("#min-max-temp-main");
+  let minElement = document.querySelector("#min-temp");
+  let maxElement = document.querySelector("#max-temp");
   let humidityElement = document.querySelector(".humidity");
   let windspeedElement = document.querySelector(".windspeed");
   let iconElement = document.querySelector("#main-icon");
+  let sunriseElement = document.querySelector("#sunrise");
+  let sunsetElement = document.querySelector("#sunset");
 
   celsiusTemperature = response.data.main.temp;
   maxTempCelsius = response.data.main.temp_max;
@@ -95,13 +98,12 @@ function showWeather(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityNameElement.innerHTML = `${response.data.name}, ${response.data.sys.country} `;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  minMaxElement.innerHTML = `Min: ${Math.round(
-    minTempCelsius
-  )} Max:${Math.round(maxTempCelsius)}`;
+  minElement.innerHTML = `Min: ${Math.round(minTempCelsius)}`;
+  maxElement.innerHTML = `Max: ${Math.round(maxTempCelsius)}`;
   humidityElement.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )} %`;
-  windspeedElement.innerHTML = `Wind speed: ${Math.round(
+  windspeedElement.innerHTML = `Wind: ${Math.round(
     response.data.wind.speed
   )} km/h`;
   iconElement.setAttribute(
@@ -112,6 +114,12 @@ function showWeather(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   timestampElement.innerHTML = `Last updated: ${formatTime(
     response.data.dt * 1000
+  )}`;
+  sunriseElement.innerHTML = `Sunrise: ${formatTime(
+    response.data.sys.sunrise * 1000
+  )}`;
+  sunsetElement.innerHTML = `Sunset: ${formatTime(
+    response.data.sys.sunset * 1000
   )}`;
 
   getForecast(response.data.coord);

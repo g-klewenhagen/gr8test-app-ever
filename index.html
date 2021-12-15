@@ -54,37 +54,37 @@
       <div class="container">
         <div id="content" class="p-4 p-md-5 pt-5">
           <!-- Search bar -->
-        <div class="wrapper" id="search-section">
           <form class="weather-search-form" id="search-form">
-            <button
-              type="submit"
-              class="btn btn-link current-location-button"
-              id="current-location-button"
-              data-toggle="tooltip" 
-              title="Get current location's weather"
-            >
-              <i class="fas fa-map-marker-alt"></i> Current location
-            </button>
-            <input
-              type="search"
-              class="search-box"
-              id="search-city"
-              autofocus="on"
-              autocomplete="off"
-              placeholder="Enter a city"
-              aria-label="Search through site content"
-            />
-            <button
-              type="submit"
-              class="btn btn-link"
-              id="search-location-button"
-              data-toggle="tooltip" 
-              title="Search new location's weather"
-            >
-              <i class="fas fa-search-location"></i>Search
-            </button>
+            <div class="wrapper-search" id="search-section">
+              <button
+                type="submit"
+                class="btn btn-link current-location-button active"
+                id="current-location-button"
+                data-toggle="tooltip" 
+                title="Get current location's weather"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+              <input
+                type="search"
+                class="search-box"
+                id="search-city"
+                autofocus="on"
+                autocomplete="off"
+                placeholder="Enter a city"
+                aria-label="Search through site content"
+              />
+              <button
+                type="submit"
+                class="btn btn-link"
+                id="search-location-button"
+                data-toggle="tooltip" 
+                title="Search new location's weather"
+              >
+              <i class="fas fa-search-location"></i>
+              </button>
+            </div>
           </form>
-        </div>
           <!-- Alternative display  -->
           <div class="container">
               <div class="col city-header" id="city-main">

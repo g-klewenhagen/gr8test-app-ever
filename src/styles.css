@@ -39,8 +39,11 @@ h5,
   text-transform: capitalize;
 }
 .wrapper-search {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
   border: 1px solid #000;
-  display: inline-block;
+  display: inline-flex;
 }
 
 input,
@@ -68,16 +71,16 @@ button {
   margin: 0 20px;
 }
 
-.search-city {
-  text-transform: capitalize;
-}
-
 .search-box {
+  flex-grow: 1;
+  padding: 10px;
+  outline: none;
   font-size: medium;
+  border: 1px red;
   border-style: none;
-  padding: 8px 30px 8px 5px;
-  border-radius: 30px;
-  width: 50%;
+  background: blue;
+  border-radius: 0 0 0 0;
+  width: 100%;
 }
 
 .units-temperature a {
