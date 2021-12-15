@@ -83,8 +83,6 @@ function showWeather(response) {
   let temperatureElement = document.querySelector("#numerical-temp");
   let descriptionElement = document.querySelector("#temp-description");
   let minMaxElement = document.querySelector("#min-max-temp");
-  let minElement = document.querySelector("#min-temp");
-  let maxElement = document.querySelector("#max-temp");
   let humidityElement = document.querySelector(".humidity");
   let windspeedElement = document.querySelector(".windspeed");
   let iconElement = document.querySelector("#main-icon");
@@ -99,11 +97,9 @@ function showWeather(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityNameElement.innerHTML = `${response.data.name}, ${response.data.sys.country} `;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  minElement.innerHTML = `Min: ${Math.round(minTempCelsius)}`;
-  maxElement.innerHTML = `Max: ${Math.round(maxTempCelsius)}`;
-  minMaxElement.innerHTML = `${Math.round(maxTempCelsius)} %&§ ${Math.round(
+  minMaxElement.innerHTML = `${Math.round(maxTempCelsius)}° | ${Math.round(
     minTempCelsius
-  )}§`;
+  )}°`;
   humidityElement.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )} %`;
