@@ -60,7 +60,7 @@
                 type="submit"
                 class="btn btn-link current-location-button active"
                 id="current-location-button"
-                data-toggle="tooltip" 
+                data-toggle="tooltip"
                 title="Get current location's weather"
               >
                 <i class="fas fa-map-marker-alt"></i>
@@ -78,53 +78,65 @@
                 type="submit"
                 class="btn btn-link"
                 id="search-location-button"
-                data-toggle="tooltip" 
+                data-toggle="tooltip"
                 title="Search new location's weather"
               >
-              <i class="fas fa-search-location"></i>
+                <i class="fas fa-search-location"></i>
               </button>
             </div>
           </form>
           <!-- Alternative display  -->
           <div class="container">
-              <div class="col city-header" id="city-main">
-                <h1>Loading...</h1>
-                <h3 id="current-date-header">December, 2021</h3>
-                <h5 id="timestamp-api">Last Updated: XX:XX</h5>
-              </div>
-            <div class="row 1">
-             <div class="col icon-temp-units" id="icon-temp-main">
-              <span class="weather-icon-main" ><img id="main-icon"src="http://openweathermap.org/img/wn/10d@2x.png" alt=""></span>
-              <span class="col current-temp" id="numerical-temp">1°</span>
-                <span class="units-temperature">
-                  <a href="#" class="active" id="celsius-link">°C</a>
-                </span>
-              </div>
-            </div>
-            <div class="row 2">
+            <div class="col city-header" id="city-main">
+              <h1>Loading...</h1>
+              <h3 id="current-date-header">December, 2021</h3>
               <h4 class="col current-temp-description" id="temp-description">
                 Snow
               </h4>
             </div>
-            <div class="row additional-info">
-              <div class="col-1 min-temp" id="min-temp">Min:</div>
-              <div class="col-1">|</div>
-              <div class="col-1 max-temp" id="max-temp">Max:</div>
-              <div class="col-1">|</div>
-              <div class="col-1 humidity">Humidity: 86%</div>
-              <div class="col-1">|</div>
-              <div class="col-1 windspeed">Wind Speed: 3 km/h</div>
-              <div class="col-1">|</div>
-              <div class="col-1 sunrise" id="sunrise">Sunrise:</div>
-              <div class="col-1">|</div>
-              <div class="col-1 sunset" id="sunset">Sunset:</div>
+            <div class="row 1">
+              <div class="col icon-temp-units" id="icon-temp-main">
+                <span class="weather-icon-main"
+                  ><img
+                    id="main-icon"
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                /></span>
+                <span class="current-temp" id="numerical-temp">1°</span>
+                <span class="units-temperature">
+                  <a href="#" class="active" id="celsius-link">°C</a>
+                </span>
+              </div>
+              <div class="col additional-info">
+                <div class="min-temp" id="min-temp">Min:</div>
+                <div class="max-temp" id="max-temp">Max:</div>
+                <div class="humidity">Humidity: 86%</div>
+                <div class="windspeed">Wind Speed: 3 km/h</div>
+                <div class="sunrise" id="sunrise">Sunrise:</div>
+                <div class="unset" id="sunset">Sunset:</div>
+              </div>
+              <div class="row 2">
+                <h5 id="timestamp-api">Last Updated: XX:XX</h5>
+              </div>
+              <div class="row additional-info">
+                <div class="col-1 min-temp" id="min-temp">Min:</div>
+                <div class="col-1">|</div>
+                <div class="col-1 max-temp" id="max-temp">Max:</div>
+                <div class="col-1">|</div>
+                <div class="col-1 humidity">Humidity: 86%</div>
+                <div class="col-1">|</div>
+                <div class="col-1 windspeed">Wind Speed: 3 km/h</div>
+                <div class="col-1">|</div>
+                <div class="col-1 sunrise" id="sunrise">Sunrise:</div>
+                <div class="col-1">|</div>
+                <div class="col-1 sunset" id="sunset">Sunset:</div>
+              </div>
             </div>
-          </div>
             <!-- Forecast  -->
             <div class="container">
               <div class="row">
                 <div class="col-12 predicted-weather-text">
-                  <h2>Five-days weather forecast:</h2>
+                  <h2>Next six-days weather forecast:</h2>
                   <br />
                 </div>
                 <br />
@@ -135,9 +147,12 @@
         </div>
       </div>
     </div>
-    <footer><a href="https://github.com/g-klewenhagen/gr8test-app-ever" target="blank">Open-source coded</a> by Gabriela Klewenhagen</footer>
-    <script 
-    src="src/index.js">
-    </script>
+    <footer>
+      <a href="https://github.com/g-klewenhagen/gr8test-app-ever" target="blank"
+        >Open-source coded</a
+      >
+      by Gabriela Klewenhagen
+    </footer>
+    <script src="src/index.js"></script>
   </body>
 </html>
