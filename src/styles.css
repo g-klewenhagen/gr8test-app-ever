@@ -119,7 +119,7 @@ footer {
   border-radius: 5px 0 0 5px;
 }
 
-.searchbar__button-search:active,
-.searchbar__button-location {
+.searchbar__button-search:hover,
+.searchbar__button-location:hover {
   box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.25);
 }

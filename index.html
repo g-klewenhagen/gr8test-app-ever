@@ -26,30 +26,6 @@
   </head>
   <body>
     <div class="wrapper d-flex align-items-stretch">
-      <!-- Side bar  -->
-      <nav id="sidebar">
-        <div class="custom-menu"></div>
-        <div class="p-4 pt-5">
-          <ul class="list-unstyled components mb-5">
-            <li class="active">
-              <a href="#">Stuttgart</a>
-            </li>
-            <li>
-              <a href="#">Paris</a>
-            </li>
-            <li>
-              <a href="#">Tokyo </a>
-            </li>
-            <li>
-              <a href="#">New York</a>
-            </li>
-            <li>
-              <a href="#">Mexico City</a>
-            </li>
-          </ul>
-          <div class="mb-5"></div>
-        </div>
-      </nav>
       <!-- Page Content  -->
       <div class="container">
         <div id="content" class="p-4 p-md-5 pt-5">
@@ -87,15 +63,18 @@
           </form>
           <!-- Alternative display  -->
           <div class="container">
-            <div class="col city-header" id="city-main">
-              <h1>Loading...</h1>
-              <h3 id="current-date-header">December, 2021</h3>
-              <h4 class="col current-temp-description" id="temp-description">
-                Snow
-              </h4>
-            </div>
             <div class="row 1">
+              <div class="col city-header" id="city-main">
+                <h1>Loading...</h1>
+                <h3 id="current-date-header">December, 2021</h3>
+                <h4 class="col current-temp-description" id="temp-description">
+                  Snow
+                </h4>
+              </div>
               <div class="col icon-temp-units" id="icon-temp-main">
+                <div class="row 2">
+                  <small id="timestamp-api">Last Updated: XX:XX</small>
+                </div>
                 <span class="weather-icon-main"
                   ><img
                     id="main-icon"
@@ -106,24 +85,16 @@
                 <span class="units-temperature">
                   <a href="#" class="active" id="celsius-link">°C</a>
                 </span>
+                <div class="min-temp" id="min-temp">Min: Max:</div>
               </div>
             </div>
-            <div class="col additional-info">
-              <div class="min-temp" id="min-temp">Min:</div>
-              <div class="max-temp" id="max-temp">Max:</div>
-              <div class="humidity">Humidity: 86%</div>
-              <div class="windspeed">Wind Speed: 3 km/h</div>
-              <div class="sunrise" id="sunrise">Sunrise:</div>
-              <div class="unset" id="sunset">Sunset:</div>
-            </div>
+
             <div class="row 2">
               <div class="col min-max-temp">
                 <span class="min-temp" id="min-temp">Min:</span>
                 <span class="max-temp" id="max-temp">Max:</span>
               </div>
-              <div class="row 2">
-                <h5 id="timestamp-api">Last Updated: XX:XX</h5>
-              </div>
+
               <div class="row additional-info">
                 <div class="col-1 min-temp" id="min-temp">Min:</div>
                 <div class="col-1">|</div>

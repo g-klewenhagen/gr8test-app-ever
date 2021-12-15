@@ -79,9 +79,10 @@ function showWeather(response) {
   console.log(response);
   let dateElement = document.querySelector("#current-date-header");
   let cityNameElement = document.querySelector("h1");
-  let timestampElement = document.querySelector("h5");
+  let timestampElement = document.querySelector("#timestamp-api");
   let temperatureElement = document.querySelector("#numerical-temp");
   let descriptionElement = document.querySelector("#temp-description");
+  let minMaxElement = document.querySelector("#min-max-temp");
   let minElement = document.querySelector("#min-temp");
   let maxElement = document.querySelector("#max-temp");
   let humidityElement = document.querySelector(".humidity");
