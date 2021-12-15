@@ -156,49 +156,11 @@ function changeToCurrentLocationInfo(event) {
 let locate = document.querySelector("#current-location-button");
 locate.addEventListener("click", changeToCurrentLocationInfo);
 
-//Change between F and C
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let minTempFahrenheit = (minTempCelsius * 9) / 5 + 32;
-  let maxTempFahrenheit = (maxTempCelsius * 9) / 5 + 32;
-  let windspeedImperial = windspeed / 1.609;
-  let temperatureElement = document.querySelector("#numerical-temp");
-  let minMaxElement = document.querySelector("#min-max-temp-main");
-  let windspeedElement = document.querySelector(".windspeed");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  minMaxElement.innerHTML = `Min: ${Math.round(
-    minTempFahrenheit
-  )} Max:${Math.round(maxTempFahrenheit)}`;
-  windspeedElement.innerHTML = `${Math.round(windspeedImperial)} mph`;
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#numerical-temp");
-  let minMaxElement = document.querySelector("#min-max-temp-main");
-  let windspeedElement = document.querySelector(".windspeed");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  minMaxElement.innerHTML = `Min: ${Math.round(
-    minTempCelsius
-  )} Max:${Math.round(maxTempCelsius)}`;
-  windspeedElement.innerHTML = `${Math.round(windspeed)} km/h`;
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-}
 
 let celsiusTemperature = null;
 let minTempCelsius = null;
 let maxTempCelsius = null;
 let windspeed = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 navigator.geolocation.getCurrentPosition(retrievePosition);
 
