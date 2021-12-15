@@ -54,7 +54,7 @@ function displayForecast(response) {
           <span class="forecast-temp-max"> ${Math.round(
             forecastDay.temp.max
           )}° </span>
-          <span class="forecast-temp-min"> ${Math.round(
+          <span class="forecast-temp-min text-muted"> ${Math.round(
             forecastDay.temp.min
           )}° </span>
         </div>
@@ -201,3 +201,9 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 navigator.geolocation.getCurrentPosition(retrievePosition);
+
+//tooltip enablement
+
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
