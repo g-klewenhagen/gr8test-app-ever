@@ -101,6 +101,9 @@ function showWeather(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   minElement.innerHTML = `Min: ${Math.round(minTempCelsius)}`;
   maxElement.innerHTML = `Max: ${Math.round(maxTempCelsius)}`;
+  minMaxElement.innerHTML = `${Math.round(maxTempCelsius)} %&§ ${Math.round(
+    minTempCelsius
+  )}§`;
   humidityElement.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )} %`;
