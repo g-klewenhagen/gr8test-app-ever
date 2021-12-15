@@ -1,4 +1,5 @@
 body {
+  background: url(abstract-color-vector.png);
   background: linear-gradient(
     68.6deg,
     rgb(252, 165, 241) 1.8%,
@@ -39,50 +40,7 @@ h5,
 #temp-description:first-letter {
   text-transform: capitalize;
 }
-.wrapper-search {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 300px;
-  border: 1px solid #000;
-  display: inline-flex;
-}
 
-input,
-button {
-  background-color: white;
-  border: 1;
-}
-
-.search-box:hover {
-  border-style: none;
-  box-shadow: 3px 2px 2px rgb(88, 88, 88);
-}
-
-.search-icon {
-  font-size: 20px;
-  padding: 7px;
-  transition: all 200ms ease-in-out;
-}
-
-.search-icon:hover {
-  color: rgb(90, 90, 90);
-}
-
-.search {
-  margin: 0 20px;
-}
-
-.search-box {
-  flex-grow: 1;
-  padding: 10px;
-  outline: none;
-  font-size: medium;
-  border: 1px red;
-  border-style: none;
-  background: white;
-  border-radius: 0 0 0 0;
-  width: 100%;
-}
 #numerical-temp {
   color: black;
   display: inline-block;
@@ -110,4 +68,58 @@ footer {
   text-align: center;
   justify-content: center;
   font-size: 12px;
+}
+
+.searchbar {
+  width: 100%;
+  max-width: 300px;
+  display: inline-flex;
+}
+
+.searchbar--max-width {
+  max-width: 100%;
+}
+
+.searchbar__input {
+  flex-grow: 1;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #f2059f;
+  border-radius: 0 0 0 0;
+  background: #fff6fc;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.searchbar__input:focus {
+  background: white;
+  box-shadow: 0 0 2px #fc8dd5;
+}
+
+.searchbar__input::placeholder {
+  color: #fc8dd5;
+}
+
+.searchbar__button-search,
+.searchbar__button-location {
+  width: 40px;
+  background: #f2059f;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+.searchbar__button-search {
+  border-radius: 0 5px 5px 0;
+}
+.searchbar__button-location {
+  border-radius: 5px 0 0 5px;
+}
+
+.searchbar__button-search:active,
+.searchbar__button-location {
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.25);
 }

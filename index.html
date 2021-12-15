@@ -54,11 +54,11 @@
       <div class="container">
         <div id="content" class="p-4 p-md-5 pt-5">
           <!-- Search bar -->
-          <form class="weather-search-form" id="search-form">
-            <div class="wrapper-search" id="search-section">
+          <form class="searchbar" id="search-form">
+            <div class="searchbar" id="search-section">
               <button
                 type="submit"
-                class="btn btn-link current-location-button active"
+                class="searchbar__button-location"
                 id="current-location-button"
                 data-toggle="tooltip"
                 title="Get current location's weather"
@@ -67,7 +67,7 @@
               </button>
               <input
                 type="search"
-                class="search-box"
+                class="searchbar__input"
                 id="search-city"
                 autofocus="on"
                 autocomplete="off"
@@ -76,7 +76,7 @@
               />
               <button
                 type="submit"
-                class="btn btn-link"
+                class="searchbar__button-search"
                 id="search-location-button"
                 data-toggle="tooltip"
                 title="Search new location's weather"
@@ -107,13 +107,19 @@
                   <a href="#" class="active" id="celsius-link">°C</a>
                 </span>
               </div>
-              <div class="col additional-info">
-                <div class="min-temp" id="min-temp">Min:</div>
-                <div class="max-temp" id="max-temp">Max:</div>
-                <div class="humidity">Humidity: 86%</div>
-                <div class="windspeed">Wind Speed: 3 km/h</div>
-                <div class="sunrise" id="sunrise">Sunrise:</div>
-                <div class="unset" id="sunset">Sunset:</div>
+            </div>
+            <div class="col additional-info">
+              <div class="min-temp" id="min-temp">Min:</div>
+              <div class="max-temp" id="max-temp">Max:</div>
+              <div class="humidity">Humidity: 86%</div>
+              <div class="windspeed">Wind Speed: 3 km/h</div>
+              <div class="sunrise" id="sunrise">Sunrise:</div>
+              <div class="unset" id="sunset">Sunset:</div>
+            </div>
+            <div class="row 2">
+              <div class="col min-max-temp">
+                <span class="min-temp" id="min-temp">Min:</span>
+                <span class="max-temp" id="max-temp">Max:</span>
               </div>
               <div class="row 2">
                 <h5 id="timestamp-api">Last Updated: XX:XX</h5>
