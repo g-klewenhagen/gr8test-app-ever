@@ -61,9 +61,10 @@
               </button>
             </div>
           </form>
-          <!-- Alternative display  -->
+          <!-- Main display  -->
           <div class="container">
-            <div class="row 1">
+            <div class="weather-app-wrapper">
+              <div class="row 1">
               <div class="col city-header" id="city-main">
                 <h1>Loading...</h1>
                 <h3 id="current-date-header">December, 2021</h3>
@@ -93,11 +94,11 @@
               <div class="row additional-info">
                 <div class="col-2">Humidity: <div class="humidity"></div></div>
                 <div class="col-1">|</div>
-                <div class="col-2">Wind Speed:<div class="windspeed"></div></div>
+                <div class="col-2">Wind:<div class="windspeed"></div></div>
                 <div class="col-1">|</div>
-                <div class="col-2 sunrise" id="sunrise">Sunrise:</div>
+                <div class="col-2">Sunrise:<div id="sunrise"></div></div>
                 <div class="col-1">|</div>
-                <div class="col-2 sunset" id="sunset">Sunset:</div>
+                <div class="col-2" >Sunset:<div id="sunset"></div></div>
               </div>
             </div>
             <!-- Forecast  -->
@@ -115,10 +116,10 @@
         </div>
       </div>
     </div>
+    </div>
     <footer>
       <a href="https://github.com/g-klewenhagen/gr8test-app-ever" target="blank"
-        >Open-source coded</a
-      >
+        >Open-source coded</a>
       by Gabriela Klewenhagen
     </footer>
     <script src="src/index.js"></script>

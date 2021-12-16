@@ -111,12 +111,8 @@ function showWeather(response) {
   timestampElement.innerHTML = `Last updated: ${formatTime(
     response.data.dt * 1000
   )}`;
-  sunriseElement.innerHTML = `Sunrise: ${formatTime(
-    response.data.sys.sunrise * 1000
-  )}`;
-  sunsetElement.innerHTML = `Sunset: ${formatTime(
-    response.data.sys.sunset * 1000
-  )}`;
+  sunriseElement.innerHTML = `${formatTime(response.data.sys.sunrise * 1000)}`;
+  sunsetElement.innerHTML = `${formatTime(response.data.sys.sunset * 1000)}`;
 
   getForecast(response.data.coord);
 }

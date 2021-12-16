@@ -1,5 +1,4 @@
 body {
-  background: url(abstract-color-vector.png);
   background: linear-gradient(
     68.6deg,
     rgb(252, 165, 241) 1.8%,
@@ -10,13 +9,20 @@ body {
   font-family: "Lato", sans-serif;
   text-align: center;
 }
+
+.wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
 .container {
-  margin: 3%;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 30px;
   border-style: none;
   max-width: 600px;
+  border: none;
 }
 ul {
   list-style: none;
@@ -31,9 +37,9 @@ h1 {
 }
 h1,
 h2,
-h3,
-h4,
-h5,
+h3 {
+  text-align: left;
+}
 #icon-temp-main {
   text-align: center;
 }
@@ -61,7 +67,6 @@ h5,
 footer {
   text-align: center;
   font-size: 10px;
-  padding: 40px;
 }
 
 .additional-info {
@@ -71,8 +76,9 @@ footer {
 }
 
 .searchbar {
+  margin: 0 auto;
   width: 100%;
-  max-width: 300px;
+  max-width: 600px;
   display: inline-flex;
 }
 
