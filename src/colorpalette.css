@@ -1,0 +1,50 @@
+/* Color Theme Swatches in Hex */
+.Weather-App-1-hex {
+  color: #2192bf;
+}
+.Weather-App-2-hex {
+  color: #0e4c59;
+}
+.Weather-App-3-hex {
+  color: #54acbf;
+}
+.Weather-App-4-hex {
+  color: #f2ae30;
+}
+.Weather-App-5-hex {
+  color: #f28c0f;
+}
+
+/* Color Theme Swatches in RGBA */
+.Weather-App-1-rgba {
+  color: rgba(32, 146, 191, 1);
+}
+.Weather-App-2-rgba {
+  color: rgba(14, 75, 89, 1);
+}
+.Weather-App-3-rgba {
+  color: rgba(84, 171, 191, 1);
+}
+.Weather-App-4-rgba {
+  color: rgba(242, 174, 48, 1);
+}
+.Weather-App-5-rgba {
+  color: rgba(242, 139, 14, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.Weather-App-1-hsla {
+  color: hsla(196, 70, 43, 1);
+}
+.Weather-App-2-hsla {
+  color: hsla(191, 72, 20, 1);
+}
+.Weather-App-3-hsla {
+  color: hsla(191, 45, 54, 1);
+}
+.Weather-App-4-hsla {
+  color: hsla(39, 88, 56, 1);
+}
+.Weather-App-5-hsla {
+  color: hsla(33, 89, 50, 1);
+}
