@@ -26,11 +26,45 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
+    <!-- Alternate nav bar top -->
+    <container id="navbar-top">
+        <nav class="navbar">
+          <form class="form-inlineform searchbar" id="search-form">
+            <button
+              type="button"
+              class="searchbar__button-location"
+              id="current-location-button"
+              data-toggle="tooltip"
+              title="Get current location's weather"
+              >
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
+            <input
+              type="search"
+              class="searchbar__input"
+              id="search-city"
+              autofocus="on"
+              autocomplete="off"
+              placeholder="Enter a city"
+              aria-label="Search through site content"
+            />
+            <button
+              type="submit"
+              class="searchbar__button-search"
+              id="search-location-button"
+              data-toggle="tooltip"
+              title="Search new location's weather"
+            >
+              <i class="fas fa-search-location"></i>
+            </button>
+          </form>
+        </nav>
+    </container>
     <div class="wrapper d-flex align-items-stretch">
         <!-- Page Content  -->
       <div class="container">
         <!-- Search bar -->
-        <form class="searchbar" id="search-form">
+        <!--<form class="searchbar" id="search-form">
           <div class="searchbar" id="search-section">
             <button
                 type="button"
@@ -60,7 +94,7 @@
               <i class="fas fa-search-location"></i>
             </button>
           </div>
-        </form>
+        </form>-->
         <!-- Main display  -->
         <div class="row 1">
           <div class="col-6 city-header" id="city-main">

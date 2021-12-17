@@ -79,12 +79,12 @@ function showWeather(response) {
   let dateElement = document.querySelector("#current-date-header");
   let cityNameElement = document.querySelector("h1");
   let timestampElement = document.querySelector("#timestamp-api");
-  let temperatureElement = document.querySelector("#temperatue");
+  let temperatureElement = document.querySelector("#numerical-temp");
   let descriptionElement = document.querySelector("#temp-description");
   let minMaxElement = document.querySelector("#min-max-temp");
   let humidityElement = document.querySelector(".humidity");
   let windspeedElement = document.querySelector(".windspeed");
-  let iconElement = document.querySelector("#icon");
+  let iconElement = document.querySelector("#main-icon");
   let sunriseElement = document.querySelector("#sunrise");
   let sunsetElement = document.querySelector("#sunset");
 
@@ -159,4 +159,3 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Stuttgart");
-
