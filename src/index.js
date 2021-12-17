@@ -12,7 +12,6 @@ function formatDate(timestamp) {
   let date = new Date(timestamp),
     formattedDateTimestamp = date.toLocaleDateString([], {
       weekday: "long",
-      year: "numeric",
       month: "long",
       day: "numeric",
     });
@@ -80,12 +79,12 @@ function showWeather(response) {
   let dateElement = document.querySelector("#current-date-header");
   let cityNameElement = document.querySelector("h1");
   let timestampElement = document.querySelector("#timestamp-api");
-  let temperatureElement = document.querySelector("#numerical-temp");
+  let temperatureElement = document.querySelector("#temperatue");
   let descriptionElement = document.querySelector("#temp-description");
   let minMaxElement = document.querySelector("#min-max-temp");
   let humidityElement = document.querySelector(".humidity");
   let windspeedElement = document.querySelector(".windspeed");
-  let iconElement = document.querySelector("#main-icon");
+  let iconElement = document.querySelector("#icon");
   let sunriseElement = document.querySelector("#sunrise");
   let sunsetElement = document.querySelector("#sunset");
 
@@ -111,26 +110,11 @@ function showWeather(response) {
   timestampElement.innerHTML = `Last updated: ${formatTime(
     response.data.dt * 1000
   )}`;
-  sunriseElement.innerHTML = `Sunrise: ${formatTime(
-    response.data.sys.sunrise * 1000
-  )}`;
-  sunsetElement.innerHTML = `Sunset: ${formatTime(
-    response.data.sys.sunset * 1000
-  )}`;
+  sunriseElement.innerHTML = `${formatTime(response.data.sys.sunrise * 1000)}`;
+  sunsetElement.innerHTML = `${formatTime(response.data.sys.sunset * 1000)}`;
 
   getForecast(response.data.coord);
 }
-
-function searchEvent(event) {
-  event.preventDefault();
-  let apiKey = "9d10ae99dce72210fc268d3c5d70c5df";
-  let city = document.querySelector("#search-city").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-}
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", searchEvent);
 
 //function to retrieve position
 
@@ -157,10 +141,22 @@ let minTempCelsius = null;
 let maxTempCelsius = null;
 let windspeed = null;
 
-navigator.geolocation.getCurrentPosition(retrievePosition);
+//Search Function
 
-//tooltip enablement
+function search(city) {
+  let apiKey = "9d10ae99dce72210fc268d3c5d70c5df";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
 
-$(document).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-city");
+  search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Stuttgart");
+

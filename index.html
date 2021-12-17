@@ -26,55 +26,52 @@
   </head>
   <body>
     <div class="wrapper d-flex align-items-stretch">
-      <!-- Page Content  -->
+        <!-- Page Content  -->
       <div class="container">
-        <div id="content" class="p-4 p-md-5 pt-5">
-          <!-- Search bar -->
-          <form class="searchbar" id="search-form">
-            <div class="searchbar" id="search-section">
-              <button
-                type="submit"
+        <!-- Search bar -->
+        <form class="searchbar" id="search-form">
+          <div class="searchbar" id="search-section">
+            <button
+                type="button"
                 class="searchbar__button-location"
                 id="current-location-button"
                 data-toggle="tooltip"
                 title="Get current location's weather"
-              >
+            >
                 <i class="fas fa-map-marker-alt"></i>
-              </button>
-              <input
-                type="search"
-                class="searchbar__input"
-                id="search-city"
-                autofocus="on"
-                autocomplete="off"
-                placeholder="Enter a city"
-                aria-label="Search through site content"
-              />
-              <button
-                type="submit"
-                class="searchbar__button-search"
-                id="search-location-button"
-                data-toggle="tooltip"
-                title="Search new location's weather"
-              >
-                <i class="fas fa-search-location"></i>
-              </button>
-            </div>
-          </form>
-          <!-- Alternative display  -->
-          <div class="container">
-            <div class="row 1">
-              <div class="col city-header" id="city-main">
-                <h1>Loading...</h1>
-                <h3 id="current-date-header">December, 2021</h3>
-                <small id="timestamp-api">Last Updated: XX:XX</small>
-              </div>
-              <div class="col icon-temp-units" id="icon-temp-main">
-                <div class="row 2">
-                  <h4 class="col current-temp-description" id="temp-description">
-                  Snow
-                  </h4>
-                </div>
+            </button>
+            <input
+              type="search"
+              class="searchbar__input"
+              id="search-city"
+              autofocus="on"
+              autocomplete="off"
+              placeholder="Enter a city"
+              aria-label="Search through site content"
+            />
+            <button
+              type="submit"
+              class="searchbar__button-search"
+              id="search-location-button"
+              data-toggle="tooltip"
+              title="Search new location's weather"
+            >
+              <i class="fas fa-search-location"></i>
+            </button>
+          </div>
+        </form>
+        <!-- Main display  -->
+        <div class="row 1">
+          <div class="col-6 city-header" id="city-main">
+            <h1>Loading...</h1>
+            <h3 id="current-date-header">December, 2021</h3>
+            <small id="timestamp-api">Last Updated: XX:XX</small>
+        </div>
+        <div class="col icon-temp-units" id="icon-temp-main">
+            <h4 class="current-temp-description" id="temp-description">
+                Snow
+            </h4>
+            <div class="icon-temp-main">
                 <span class="weather-icon-main"
                   ><img
                     id="main-icon"
@@ -85,42 +82,37 @@
                 <span class="units-temperature">
                   <a href="#" class="active" id="celsius-link">°C</a>
                 </span>
-                <div class="min-temp" id="min-max-temp">Min: Max:</div>
-              </div>
             </div>
-          </br>
-
-              <div class="row additional-info">
+            <div class="min-temp" id="min-max-temp">Min: Max:</div>
+            </div>
+            </br>
+            </br>
+            <div class="row additional-info">
                 <div class="col-2">Humidity: <div class="humidity"></div></div>
                 <div class="col-1">|</div>
-                <div class="col-2">Wind Speed:<div class="windspeed"></div></div>
+                <div class="col-2">Wind:<div class="windspeed"></div></div>
                 <div class="col-1">|</div>
-                <div class="col-2 sunrise" id="sunrise">Sunrise:</div>
+                <div class="col-2">Sunrise:<div id="sunrise"></div></div>
                 <div class="col-1">|</div>
-                <div class="col-2 sunset" id="sunset">Sunset:</div>
+                <div class="col-2" >Sunset:<div id="sunset"></div></div>
               </div>
-            </div>
-            <!-- Forecast  -->
+            </br>
+        <!-- Forecast  -->
             <div class="container">
-              <div class="row">
-                <div class="col-12 predicted-weather-text">
-                  <h2>Next six-days weather forecast:</h2>
-                  <br />
+                <div class="row">
+                    <h2>Next six-days weather forecast:</h2>
+                    <br />
+                    <div id="forecast-info"></div>
                 </div>
-                <br />
-              </div>
-              <div id="forecast-info"></div>
             </div>
-          </div>
+        <!-- Footer  -->
+            <footer>
+                <a
+                href="https://github.com/g-klewenhagen/gr8test-app-ever"
+                target="blank">Open-source coded</a> by Gabriela Klewenhagen
+            </footer>
         </div>
-      </div>
     </div>
-    <footer>
-      <a href="https://github.com/g-klewenhagen/gr8test-app-ever" target="blank"
-        >Open-source coded</a
-      >
-      by Gabriela Klewenhagen
-    </footer>
-    <script src="src/index.js"></script>
+    <script src="src/app.js"></script>
   </body>
 </html>
