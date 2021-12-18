@@ -9,13 +9,37 @@ function formatTime(timestamp) {
 }
 //Display current date
 function formatDate(timestamp) {
-  let date = new Date(timestamp),
-    formattedDateTimestamp = date.toLocaleDateString([], {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-    });
-  return formattedDateTimestamp;
+  let date = new Date(timestamp);
+  let weekdays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let weekday = weekdays[date.getDay()];
+  let day = date.getDate();
+  let month = months[date.getMonth()];
+  let fullDate = `${weekday}, ${month} ${day}`;
+  return fullDate;
 }
 
 //Format Days (Forecast)

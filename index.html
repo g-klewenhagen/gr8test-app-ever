@@ -17,8 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/css/weather-icons.min.css" />
-    <link href="src/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="src/weather-icons.min.css" />
+    <link href="src/styles.css" rel="stylesheet" />
     <script
       src="https://kit.fontawesome.com/e8d6719695.js"
       crossorigin="anonymous"
@@ -101,7 +101,7 @@
           <div class="col-6 city-header" id="city-main">
             <h1>Loading...</h1>
             <h3 id="current-date-header">December, 2021</h3>
-            <small id="timestamp-api">Last Updated: XX:XX</small>
+            <h6 id="timestamp-api">Last Updated: XX:XX</h6>
         </div>
         <div class="col icon-temp-units" id="icon-temp-main">
             <h4 class="current-temp-description" id="temp-description">
@@ -114,6 +114,7 @@
                     src="http://openweathermap.org/img/wn/10d@2x.png"
                     alt=""
                 /></span>
+                <span><i id="icon" class="wi wi-owm-night-200"></i></span>
                 <span class="current-temp" id="numerical-temp">1°</span>
                 <span class="units-temperature">
                   <a href="#" class="active" id="celsius-link">°C</a>
