@@ -2,18 +2,31 @@ nav {
   background-color: transparent;
 }
 body {
-  background: #54acbf;
+  background-color: #2192bf;
   color: white;
   display: block;
   margin: auto;
   font-family: "Lato", sans-serif;
   text-align: center;
 }
-
+h1,
+h2,
+h3,
+#timestamp-api {
+  text-align: left;
+  margin-left: 10px;
+}
+h4 {
+  line-height: 3;
+  font-weight: 300;
+}
 .wrapper {
   max-width: 600px;
   margin: 30px auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
+
 .container {
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.3);
@@ -21,53 +34,6 @@ body {
   border-style: none;
   max-width: 600px;
   border: none;
-}
-ul {
-  list-style: none;
-  text-align: left;
-  font-size: 18px;
-  font-weight: 500;
-}
-h1 {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 35px;
-}
-h1,
-h2,
-h3 {
-  text-align: left;
-}
-h4 {
-  line-height: 3;
-  font-weight: 300;
-}
-#icon-temp-main {
-  text-align: center;
-}
-#temp-description:first-letter {
-  text-transform: capitalize;
-}
-
-#numerical-temp {
-  color: black;
-  display: inline-block;
-  font-size: 48px;
-  line-height: 60px;
-  vertical-align: middle;
-}
-
-footer {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 10px;
-  line-height: 3;
-}
-
-.additional-info {
-  text-align: center;
-  justify-content: center;
-  font-size: 12px;
 }
 
 .searchbar {
@@ -89,7 +55,7 @@ footer {
   flex-grow: 1;
   padding: 10px;
   outline: none;
-  border: 1px solid #f2059f;
+  border: 1px solid #f28c0f;
   border-radius: 0 0 0 0;
   background: #fff6fc;
   transition: background 0.25s, box-shadow 0.25s;
@@ -97,17 +63,17 @@ footer {
 
 .searchbar__input:focus {
   background: white;
-  box-shadow: 0 0 2px #fc8dd5;
+  box-shadow: 0 0 2px #faefe1;
 }
 
 .searchbar__input::placeholder {
-  color: #fc8dd5;
+  color: #f5cc97;
 }
 
 .searchbar__button-search,
 .searchbar__button-location {
   width: 40px;
-  background: #f2059f;
+  background: #f28c0f;
   color: #ffffff;
   outline: none;
   border: none;
@@ -143,7 +109,39 @@ footer {
 }
 
 .weather-forecast {
-  margin-top: 20px;
+  margin: 20px, 10px, 20px, 10px;
   text-align: center;
-  color: #000;
+}
+#temp-description:first-letter {
+  text-transform: capitalize;
+}
+
+#numerical-temp {
+  color: #f2ae30;
+  display: inline-block;
+  font-size: 48px;
+  line-height: 60px;
+  vertical-align: middle;
+}
+.units-temperature a {
+  text-decoration: none;
+}
+.units-temperature .active {
+  color: white;
+  text-decoration: none;
+  cursor: default;
+}
+
+footer {
+  text-align: center;
+  font-size: 10px;
+  line-height: 3;
+}
+
+.additional-info {
+  text-align: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 30px
+  margin-bottom:30px;
 }
