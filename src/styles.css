@@ -13,8 +13,9 @@ h1,
 h2,
 h3,
 #timestamp-api {
-  text-align: left;
+  text-align: center;
   margin-left: 10px;
+  color: #0e4c59;
 }
 h3 {
   font-size: 25px;
@@ -105,10 +106,10 @@ h4 {
   font-weight: 400;
 }
 
-.weather-temperature .units {
+.units-temperature {
   position: relative;
-  font-size: 16px;
-  top: -34px;
+  top: -10px;
+  font-size: 30px;
 }
 
 .weather-forecast {
@@ -120,10 +121,10 @@ h4 {
 }
 
 #numerical-temp {
-  color: #f2ae30;
+  color: white;
   display: inline-block;
-  font-size: 48px;
-  line-height: 60px;
+  font-size: 77px;
+  font-weight: 600;
   vertical-align: middle;
 }
 .units-temperature a {
@@ -142,9 +143,23 @@ footer {
 }
 
 .additional-info {
-  text-align: center;
+  text-align: left;
   justify-content: center;
-  font-size: 12px;
+  font-size: 16px;
   margin-top: 30px;
   margin-bottom: 30px;
+  font-weight: 400;
+  position: relative;
+  top: 74px;
+  font-size: 15px;
+}
+#main-icon {
+  font-size: 80px;
+  color: #f28c0f;
+}
+
+.forecast-icon {
+  font-size: 40px;
+  padding: 5px;
+  color: #f2ae30;
 }

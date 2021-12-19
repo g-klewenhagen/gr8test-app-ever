@@ -64,46 +64,15 @@
     <div class="wrapper d-flex align-items-stretch">
         <!-- Page Content  -->
       <main class="container">
-        <!-- Search bar -->
-        <!--<form class="searchbar" id="search-form">
-          <div class="searchbar" id="search-section">
-            <button
-                type="button"
-                class="searchbar__button-location"
-                id="current-location-button"
-                data-toggle="tooltip"
-                title="Get current location's weather"
-            >
-                <i class="fas fa-map-marker-alt"></i>
-            </button>
-            <input
-              type="search"
-              class="searchbar__input"
-              id="search-city"
-              autofocus="on"
-              autocomplete="off"
-              placeholder="Enter a city"
-              aria-label="Search through site content"
-            />
-            <button
-              type="submit"
-              class="searchbar__button-search"
-              id="search-location-button"
-              data-toggle="tooltip"
-              title="Search new location's weather"
-            >
-              <i class="fas fa-search-location"></i>
-            </button>
-          </div>
-        </form>-->
         <!-- Main display  -->
-        <div class="row 1">
-          <div class="col-6 city-header" id="city-main">
+          <div class="city-timestamp-header" id="city-main">
             <h1>Loading...</h1>
             <h3 id="current-date-header">December, 2021</h3>
             <h6 id="timestamp-api">Last Updated: XX:XX</h6>
-        </div>
-        <div class="col icon-temp-units" id="icon-temp-main">
+          </div>
+        <!--<div class="col-6 timestamp" id="timestamp"><h6 id="timestamp-api">Last Updated: XX:XX</h6></div>-->
+        <div class="row 1">
+          <div class="col-6 icon-temp-units" id="icon-temp-main">
             <h4 class="current-temp-description" id="temp-description">
                 Snow
             </h4>
@@ -111,20 +80,24 @@
                 <span class="weather-icon-main"
                   ><img
                     id="main-icon"
-                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    src=""
                     alt=""
                 /></span>
-                <span><i id="icon" class="wi wi-owm-night-200"></i></span>
                 <span class="current-temp" id="numerical-temp">1°</span>
                 <span class="units-temperature">
                   <a href="#" class="active" id="celsius-link">°C</a>
                 </span>
             </div>
             <div class="min-temp" id="min-max-temp">Min: Max:</div>
-            </div>
-            </br>
-            </br>
-            <div class="row additional-info">
+          </div>
+          <div class="col additional-info">
+            <div>Humidity: <span class="humidity"></span></div>
+            <div>Wind: <span class="windspeed"></span></div>
+            <div>Sunrise: <span id="sunrise"></span></div>
+            <div>Sunset: <span id="sunset"></span></div>
+          </div>
+        </div>
+            <!--<div class="row additional-info">
                 <div class="col-2">Humidity: <div class="humidity"></div></div>
                 <div class="col-1">|</div>
                 <div class="col-2">Wind:<div class="windspeed"></div></div>
@@ -134,7 +107,7 @@
                 <div class="col-2" >Sunset:<div id="sunset"></div></div>
               </div>
             </br>
-            </br>
+            </br>-->
         <!-- Forecast  -->
             <div class="weather-forecast">
                 <div class="row">
